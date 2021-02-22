@@ -280,9 +280,9 @@ app.put(
   })
 );
 
-// app.get("/", (req, res) => {
-//   res.send("Hello World!");
-// });
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 
 //upload configuration route
 
@@ -293,10 +293,10 @@ app.use(express.static(path.join(__Dirname, "/frontend/build")));
 
 //-----------------------server static assets in production-------------------------------
 
-app.use(express.static(path.join(__dirname,'/frontend/build')));
-app.get('*',(req, res)=>{
-    res.sendFile(path.join(__dirname,'/frontend/build/index.html'))
-})
+// app.use(express.static(path.join(__dirname,'/frontend/build')));
+// app.get('*',(req, res)=>{
+//     res.sendFile(path.join(__dirname,'/frontend/build/index.html'))
+// })
 
 app.listen(PORT, () => {
   console.log("server is running on port 5000");
